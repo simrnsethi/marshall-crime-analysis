@@ -4,28 +4,28 @@ focusing on the interaction aspects and connecting these choices to a data abstr
 
 I have utilized the following design to effectively do the job of comparing the criminal records and trends across different cities. Shown below is the dashboard of the same.
 
-![](images/1full_dashboard.png)
+<img src="images/1full_dashboard.png" width="100%">
 
 ##### The header of the function window gives the user a context into what will be analyzed.
 
-![](images/2task_bar_header.png)
-
+<img src="images/2task_bar_header.png" width="60%">
 
 ##### The slider input takes in a range of the year and then uses that information to plot it on the graph.
 
-![](images/3year_range_slider_input.png)
+<img src="images/3year_range_slider_input.png" width="60%">
+
 
 ##### The paramter radio button takes in a parameter value from a range of values and then uses them on the plot's y-axis. The paramters can range from homicides, rapes, violent crimes and assaults. I wanted this to be a radio button because there can be only one parameter that can be plotted on the y-axis.
 
-![](images/4parameter_.png)
+<img src="images/4parameter_.png" width="60%">
 
 ##### The select input button can be used to select the city to compare with others. This will then be used to filter out the dataset to include just that city.
 
-![](images/5select_input.png)
+<img src="images/5select_input.png" width="60%">
 
 ##### The `Download results` button can be used by the user to download the data table as a CSV onto their own computer. 
 
-![](images/6download_results.png)
+<img src="images/6download_results.png" width="40%">
 
 ##### The graph displays the trend in crime data as compared to all the other cities in the Marshall dataset.
 
@@ -33,7 +33,7 @@ I have utilized the following design to effectively do the job of comparing the 
 
 ##### The data table can be used to view the data in a flexible manner.
 
-![](images/8data_table.png)
+<img src="images/8data_table.png" width="60%">
 
 # Visual Encoding
 
