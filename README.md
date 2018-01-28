@@ -1,11 +1,11 @@
 
-# The Marshall Project Dataset Shiny app
+# The Marshall Project Dataset Shiny app 📈🇺🇸
 
-### About the app:
+### ℹ About the app:
 
 This app has been developed in order to compare the number of crimes and their ratios in different cities of the United States. The data used to build this app can be found [here](https://www.themarshallproject.org/).
 
-### About the data:
+### ℹ About the data:
 
 The data has the following components:
 
@@ -25,28 +25,28 @@ The data has the following components:
 14. `agg_ass_per_100k` -> Aggregated sum of assaults per 100k in the city for a each year.
 
 
-### How to use the app:
+### 🚜 How to use the app:
 
 1. Select or type in the city names you would like to compare in the sidebar of the main dashboard window.
 2. Select the paramter you would like to compare from the radio buttons below the city input box.
 3. Select the `year` range you would like to compare from the input slider.
 4. The `maps` tab displays a plotly map of the United States and the number of crimes in the latest year selected in the year slider input.
 
-### Download the data:
+### ⏬ Download the data:
 
 You can download the data from the cities you have compared by clicking on the Download data button above the data table. Thanks.
 
-### Screenshots:
+### 📸 Screenshots:
 
-#### Main dashboard
+#### 📊 Main dashboard
 
 ![](images/main.png)
 
-#### Interactive map of the US showing violent crimes in different states.
+#### 🇺🇸 Interactive map of the US showing violent crimes in different states.
 
 ![](images/map.png)
 
-#### A walkthrough of the shiny app for new users.
+#### 🚶‍♂️ A walkthrough of the shiny app for new users.
 
 ![](images/info_.png)
 
