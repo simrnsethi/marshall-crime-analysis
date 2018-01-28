@@ -40,6 +40,6 @@ Tim is a regular US citizen who wants to change his city and start his new life 
 
 The app contains a landing page would contain a graph that would help to analyze the trend of the selected parameters such as assaults, rapes, robberies, homicides per capita vs year. The user will then be able to select a city for which he can analyze the trend versus the other cities in the data.
 
-![](proposal.png)
+![](images/proposal.png)
 
 Presented above is the initial sketch of the app.
