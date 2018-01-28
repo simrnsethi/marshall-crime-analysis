@@ -39,5 +39,7 @@ You can download the data from the cities you have compared by clicking on the D
 
 ![](images/main.png)
 
+![](images/map.png)
+
 ![](images/info_.png)
 
