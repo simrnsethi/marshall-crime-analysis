@@ -6,10 +6,6 @@ shinyUI(dashboardPage( skin = "black",
   dashboardHeader(title = "Marshall crime data analysis",titleWidth = 400),
   
   dashboardSidebar(
-    
-      # h4("Welcome, to the exploration of the Marshall dataset."), 
-      # "We will be exploring the crime rates in different cities across the US in this project.",
-      # hr(),
       
       sidebarMenu(
         menuItem("Main",tabName = "main",icon = icon("dashboard")),
@@ -27,15 +23,10 @@ shinyUI(dashboardPage( skin = "black",
                    label = "Select Crime:",
                    choices = paraToChoose,
                    selected = "homs_per_100k")
-      # selectInput("city",
-      #             label = "City to compare:",
-      #             choices = unique(data$department_name),
-      #             selected = "Albuquerque, N.M.")
-      # textInput("plotTitle",
-      #           label = "Title of the plot:",
-      #           value = "Comparison chart:")
     ),
   dashboardBody(
+    tabItems(
+      tabItem(tabName = "main",
       plotOutput("thePlot"),
       br(),
       br(),
@@ -47,7 +38,13 @@ shinyUI(dashboardPage( skin = "black",
       DT::dataTableOutput("results"),
       tags$head(
         tags$link(rel = "stylesheet", type = "text/css", href = "custom.css")
-      )
+        )
+      ),
+      tabItem(tabName = "info",
+              includeMarkdown("info.md"),
+              hr()
+              )
+          )
+        )
     )
-  )
 )

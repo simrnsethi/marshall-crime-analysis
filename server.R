@@ -7,7 +7,7 @@ shinyServer(function(input,output) {
     selectInput("typeInput","Select City/(s):",
                 sort(unique(data$department_name)),
                 multiple = TRUE,
-                selected = c("Albuquerque, N.M."))
+                selected = c("Albuquerque, N.M.","Aurora, Colo.","Baltimore"))
   })
   
   data_reactive <- reactive({
@@ -29,15 +29,6 @@ shinyServer(function(input,output) {
   })
   
   output$thePlot <- renderPlot({
-    # plot <- ggplot(gapminder_reactive()) +
-    #   aes(x = gdpPercap,y = lifeExp,colour = continent,frame = year,cumulative=TRUE) +
-    #   geom_path() +
-    #   scale_x_log10(labels = scales::dollar_format()) +
-    #   ggtitle(input$plotTitle) +
-    #   xlab("GDP-per capita") +
-    #   ylab("Life expectancy") +
-    #   facet_wrap(~country)
-    # jj = data_reactive()$homs_per_100k
     plot <- ggplot(data_reactive()) + 
       xlab("year") + 
       ylab(paste0(input$parameter))
@@ -48,27 +39,27 @@ shinyServer(function(input,output) {
       geom_line(aes(group = department_name),alpha = 0.1) +
       geom_line(data = data_reactive() %>% filter(department_name %in% input$typeInput),
                 mapping = aes(year,homs_per_100k,color = department_name)) + 
-      ggtitle("Homicides per 100k Vs Year trend graph")}
+      ggtitle("Homicides per 100k Vs Year trend graph") + ylab("Homicides per 100k") + xlab("Year")}
     else if(input$parameter == "rape_per_100k"){plot = plot + aes(x = year,y = rape_per_100k) +
       geom_line(aes(group = department_name),alpha = 0.1) +
       geom_line(data = data_reactive() %>% filter(department_name %in% input$typeInput),
                 mapping = aes(year,rape_per_100k,color = department_name)) +
-      ggtitle("Rape per 100k Vs Year trend graph")}
+      ggtitle("Rape per 100k Vs Year trend graph") + ylab("Rape per 100k") + xlab("Year")}
     else if(input$parameter == "violent_per_100k"){plot = plot + aes(x = year,y = violent_per_100k) +
       geom_line(aes(group = department_name),alpha = 0.1) +
       geom_line(data = data_reactive() %>% filter(department_name %in% input$typeInput),
                 mapping = aes(year,violent_per_100k,color = department_name)) +
-      ggtitle("Violent crimes per 100k Vs Year trend graph")}
+      ggtitle("Violent crimes per 100k Vs Year trend graph") + ylab("Violent crimes per 100k") + xlab("Year")}
     else if(input$parameter == "rob_per_100k"){plot = plot + aes(x = year,y = rob_per_100k) +
       geom_line(aes(group = department_name),alpha = 0.1) +
       geom_line(data = data_reactive() %>% filter(department_name %in% input$typeInput),
                 mapping = aes(year,rob_per_100k,color = department_name)) +
-      ggtitle("Robberies per 100k Vs Year trend graph")}
+      ggtitle("Robberies per 100k Vs Year trend graph")  + ylab("Robberies per 100k") + xlab("Year")}
     else {plot = plot + aes(x = year,y = agg_ass_per_100k) +
       geom_line(aes(group = department_name),alpha = 0.1) +
       geom_line(data = data_reactive() %>% filter(department_name %in% input$typeInput),
                 mapping = aes(year,agg_ass_per_100k,color = department_name)) +
-      ggtitle("Assaults per 100k Vs Year trend graph")}
+      ggtitle("Assaults per 100k Vs Year trend graph") + ylab("Assaults per 100k") + xlab("Year")}
 
     plot
   })
