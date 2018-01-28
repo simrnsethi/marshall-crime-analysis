@@ -30,6 +30,7 @@ The data has the following components:
 1. Select or type in the city names you would like to compare in the sidebar of the main dashboard window.
 2. Select the paramter you would like to compare from the radio buttons below the city input box.
 3. Select the `year` range you would like to compare from the input slider.
+4. The `maps` tab displays a plotly map of the United States and the number of crimes in the latest year selected in the year slider input.
 
 ### Download the data:
 
@@ -37,9 +38,15 @@ You can download the data from the cities you have compared by clicking on the D
 
 ### Screenshots:
 
+#### Main dashboard
+
 ![](images/main.png)
 
+#### Interactive map of the US showing violent crimes in different states.
+
 ![](images/map.png)
+
+#### A walkthrough of the shiny app for new users.
 
 ![](images/info_.png)
 
