@@ -1,15 +1,20 @@
 # UI file for shiny
 
-shinyUI(fluidPage(
+shinyUI(dashboardPage( skin = "black",
   
   #Application title
-  titlePanel(title = "Marshall crime data analysis", windowTitle = "UCR data parameters"),
+  dashboardHeader(title = "Marshall crime data analysis",titleWidth = 400),
   
-  sidebarLayout(
-    sidebarPanel(
-      h4("Welcome, to the exploration of the Marshall dataset."), 
-      "We will be exploring the crime rates in different cities across the US in this project.",
-      hr(),
+  dashboardSidebar(
+    
+      # h4("Welcome, to the exploration of the Marshall dataset."), 
+      # "We will be exploring the crime rates in different cities across the US in this project.",
+      # hr(),
+      
+      sidebarMenu(
+        menuItem("Main",tabName = "main",icon = icon("dashboard")),
+        menuItem("Info",tabName = "info",icon = icon("info-circle"))
+      ),
       sliderInput("year",
                   label = "Year Range",
                   min =  1975,
@@ -17,28 +22,32 @@ shinyUI(fluidPage(
                   step = 1,
                   value = c(1975,2015),
                   sep = ""),
-      # uiOutput("typeSelectOutput"),
+      uiOutput("typeSelectOutput"),
       radioButtons("parameter",
-                   label = "which parameter to plot",
+                   label = "Select Crime:",
                    choices = paraToChoose,
-                   selected = "homs_per_100k"),
-      selectInput("city",
-                  label = "City to compare:",
-                  choices = unique(data$department_name),
-                  selected = "Albuquerque, N.M.")
+                   selected = "homs_per_100k")
+      # selectInput("city",
+      #             label = "City to compare:",
+      #             choices = unique(data$department_name),
+      #             selected = "Albuquerque, N.M.")
       # textInput("plotTitle",
       #           label = "Title of the plot:",
       #           value = "Comparison chart:")
     ),
-    mainPanel(
-      downloadButton("download", "Download results"),
+  dashboardBody(
       plotOutput("thePlot"),
       br(),
       br(),
       br(),
       br(),
+      downloadButton("download", "Download results"),
+      br(),
       #tableOutput("results")
-      DT::dataTableOutput("results")
+      DT::dataTableOutput("results"),
+      tags$head(
+        tags$link(rel = "stylesheet", type = "text/css", href = "custom.css")
+      )
     )
   )
-))
+)
